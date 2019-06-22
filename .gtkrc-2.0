@@ -1,0 +1,89 @@
+#gtk-print-preview-command = "atril %f"
+#gtk-theme-name = "Adwaita"
+#gtk-icon-theme-name = "mate-brave"
+
+
+### KEYBOARD PLUGIN FONT COLOR ###
+style "xkb-plugin"
+{
+	fg[NORMAL] = "#000000"
+	fg[SELECTED] = "#000000"
+	fg[ACTIVE] = "#000000"
+}
+widget "*xkb-plugin*"	style "xkb-plugin"
+
+
+### MAIN DEFAULT ###
+style "default"
+{
+    GtkWidget::focus-line-width = 1
+    GtkWidget::focus_padding = 3
+    GtkWidget::focus-line-pattern = "\2\1"
+    GtkToolbar::internal-padding = 4
+    GtkToolButton::icon-spacing  = 4
+    GtkWidget::tooltip-radius    = 7
+    GtkMenuBar::window-dragging	= 1
+    GtkToolbar::window-dragging	= 1
+    GtkWidget::tooltip-alpha     = 235
+    GtkWidget::new-tooltip-style = 1 #for compatibility
+    GtkSeparatorMenuItem::horizontal-padding = 0
+    GtkSeparatorMenuItem::wide-separators    = 1
+    GtkSeparatorMenuItem::separator-height   = 1
+    GtkScrollbar::activate-slider	= 1
+    GtkWidget::wide-separators = 1
+}
+#class "GtkWidget" style "default"
+class "*Mail*" style "default"
+#class "*notif*" style "default"
+#class "*Notif*" style "default"
+class "*Tray*" style "default"
+class "*tray*" style "default"
+widget_class "*Mail*" style "default"
+#widget_class "*notif*" style "default"
+#widget_class "*Notif*" style "default"
+widget_class "*Tray*" style "default"
+widget_class "*tray*" style "default"
+widget_class "*BonoboDockItem" style "default"
+class "*BonoboDockItem" style "default"
+widget "*TrayIcon*" style "default"
+class "*Panel*Applet*" style "default"
+#widget_class "*Panel*GtkToggleButton" style "default"
+widget_class "*Panel*GtkButton" style "default"
+widget_class "*.Panel*Button*GtkLabel" style "default"
+widget_class "*.Panel*GtkLabel" style "default"
+widget "*PanelWidget*" style "default"
+widget "*PanelApplet*" style "default"
+
+
+### PANEL LAUNCHER ICONS/START MENU PANEL BUTTON ###
+style "my-launchers"
+{
+    xthickness = 0
+    ythickness = 0
+    GtkWidget::focus_padding = 0
+    GtkWidget::interior-focus = 1
+    GtkWidget::focus_line_width = 0
+}
+widget "*launcher*" style "my-launchers"
+widget "*whiskermenu*" style "my-launchers"
+#widget "*menu*" style "my-launchers"
+widget "*applicationsmenu*" style "my-launchers"
+#widget_class "GtkToggleButton" style "my-launchers"
+#widget_class "*Panel*GtkToggleButton" style "my-launchers"
+
+
+### POP-UPS/HELP ###
+style "gnome-color-chooser-tooltips"
+{
+  bg[NORMAL] = "#FFFFAF"
+  fg[NORMAL] = "#000000"
+}
+widget "gtk-tooltip*" style "gnome-color-chooser-tooltips"
+
+
+### FIX FOR ECLIPSE POP-UPS ###
+style "eclipse_fix" 
+{ 
+	base[ACTIVE] = shade(0.7, "#F2F1F0") 
+}
+class "GtkTreeView" style "eclipse_fix"
